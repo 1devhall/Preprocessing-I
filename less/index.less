@@ -86,12 +86,12 @@ p {
 @page-color: #8bbabb;
 @bf-color: #c7f0db;
 //mixins
-.mobile-column {
+.mobile-column() {
 	display: flex;
 	flex-direction: column;
 	width:100%;
 }
-.mobile-fonts {
+.mobile-fonts() {
 	h1 {
 		font-size: 2.5rem;
 	}
@@ -104,6 +104,17 @@ p {
 	p {
 		font-size: 1.4rem;
 	}
+}
+.flex() {
+	display: flex;
+	justify-content: space-between;
+	width:100%;
+}
+.footer-box() {
+	display :flex;
+	justify-content: center;
+	width: 100%;
+	height: 10vh;
 }
 //css main
 nav {
@@ -159,22 +170,36 @@ header {
 			padding: 2%;
 		}//closes ul li
 	}//closes right	
-}//closes middle
-@media (max-width: 500px) {
-	.middle {
-	.mobile-fonts();
-	.mobile-column();
+	@media (max-width: 500px) {
+		.mobile-fonts();
+		.mobile-column();
 	}
-}
+}//closes middle
+
+
 .bottom {
 	width:100%;
+	.flex();
 }
 	table {
-	width : 45%;
+	width : 80%;
 	tr:nth-child(even) {background-color: @page-color;}
 	th, td {
 		border-bottom: 1px solid @color1;
 		padding: 15px;
 		text-align: left;
 	}//th td closer
+	#contact {
+		width:50%;
+		border: 1px solid black;
+		display: flex;
+		justify-content: flex-start;
+	}
 }//table closer 
+footer {
+	.footer-box();
+	padding: 2%;
+	margin-top: 2%;
+	background-color: @header-color;
+	color: @bf-color;
+}
